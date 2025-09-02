@@ -1,0 +1,104 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background: #0B0209;
+}
+
+.logo-container {
+  border-radius: 5px;
+  max-height: 100px;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin-top: 20px;
+}
+
+#logo {
+  max-height: 150px;
+  max-width: 200px;  
+}
+
+.mid {
+    display: flex;
+    max-height: 80vh;
+    max-width: 100%;
+    justify-content: space-between;
+    border: 2px solid #fff;
+    margin-top: 20px;
+}
+
+
+h1{
+  color: #fff;
+  margin-top: 50px;
+  margin-left: 20px;
+  font-size: 10rem;
+  font-family: 'Kabel Ult BT';
+  text-align: left;
+}
+
+p {
+  color: #fff;
+  font-size: 3rem;
+  font-family: 'Dubai';
+  text-align: right;
+}
+
+.btnStart{
+   background-color: #FF92DC;
+   font-size: 2.5rem;
+   font-family: 'Kabel Ult BT';
+   text-align: center;
+   align-items: center;
+   width: 60%;
+   height: 15%;
+   border-radius: 50px;
+   margin-top: 50px;
+   margin-left: 20px;
+   cursor: pointer;
+}
+
+.btnStart:hover{
+    background: #ff68cf;
+    color: #0B0209;
+   transition: 0.5s ease-in-out;
+}
+
+.mid-right {
+    max-width: 50%;   
+}
+
+.girl-img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    float: right;
+}
+
+/* mouse hover */
+
+.btn-text {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.btn-arrow {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect */
+.btnStart:hover .btn-text {
+  transform: translateX(-5px);
+}
+
+.btnStart:hover .btn-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}

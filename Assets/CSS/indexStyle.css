@@ -8,9 +8,10 @@ body {
   background-color: #0B0209;
 }
 
-#logo{
-  position: absolute;
-  transition: opacity 0.5s ease, top 0.5s ease, left 0.5s ease  ;
+#logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
@@ -22,7 +23,7 @@ body {
 }
 
 .container img{
-  max-width: 50%;
+  max-width: 60%;
   height: auto;
 }
 
