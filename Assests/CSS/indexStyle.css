@@ -1,0 +1,76 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0B0209;
+}
+
+#logo{
+  position: absolute;
+  transition: opacity 0.5s ease, top 0.5s ease, left 0.5s ease  ;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container img{
+  max-width: 50%;
+  height: auto;
+}
+
+.prompt {
+  /* opacity: 0; */
+  transition: opacity 1s ease-in;
+  text-align: center;
+  position: absolute;
+  background-color: #bcbcbc;
+  color: black;
+  width: 50%;
+  height: 32%;
+  font-size: 2rem;
+  padding: 45px 0;
+  font-weight: bold;
+  font-family: 'Kabel Ult BT';
+  border-radius: 15px;
+}
+
+
+.girl, .boy {
+  padding: 10px 20px;
+  margin: 30px 50px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+  font-family: 'Kabel Ult BT';
+  font-size: 1.6rem;
+  box-shadow: 2px 4px 6px rgba(60, 60, 70, 0.5);
+}
+
+.girl {
+    background-color: #FF92DC;
+}
+
+.boy {
+    background-color: #70B2FF;
+}
+
+.girl:hover {
+  background-color: #ff73d3;
+  transition: 0.5s ease-in-out;
+}
+
+.boy:hover {
+  background-color: #51a2ff;
+  transition: 0.5s ease-in-out;
+}
