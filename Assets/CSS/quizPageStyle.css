@@ -102,3 +102,199 @@ p {
   opacity: 1;
   transform: translateX(0);
 }
+
+/* sections */
+.sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.sec1, .sec2, .sec3, .sec4, .sec5, .sec6, .sec7, .sec8 {
+  background: #ff92dd86;
+  border: 2px solid #FF0077;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  flex: 1 1 calc(25% - 40px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sec1 p, .sec2 p, .sec3 p, .sec4 p, .sec5 p, .sec6 p, .sec7 p, .sec8 p {
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  font-family: 'Kabel Ult BT';
+}
+
+.sections div:hover {
+  background: #ff68cf;
+  transition: 0.5s ease-in-out;
+  transform: scale(1.05);
+}
+
+.appear {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.appear.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.newArrivals, .tryGames {
+  color: #fff;
+  margin-top: 50px;
+  margin-left: 20px;
+  font-size: 2.5rem;
+  font-family: 'Kabel Ult BT';
+  text-align: center;
+}
+
+.newArr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.new1 , .new2, .new3, .new4 {
+  background: #ff92dd86;
+  border: 2px solid #FF0077;
+  border-radius: 10px;
+  margin: 10px 20px;
+  max-width: 500px;
+  max-height: 300px;
+  flex: 1 1 calc(25% - 40px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.new1 img, .new2 img, .new3 img, .new4 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.newArr div:hover {
+  background: #ff68cf;
+  transition: 0.5s ease-in-out;
+  transform: scale(1.05);
+}
+
+.nameText {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  color: #000000;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-family: 'Dubai';
+  max-width: 100%;
+  max-height: 20%;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  text-align: center;
+  padding: 5px;
+  font-weight: bold;
+  opacity: 0;
+} 
+
+.new1:hover .nameText,
+.new2:hover .nameText,
+.new3:hover .nameText,
+.new4:hover .nameText {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Horizontal games marquee */
+span img {
+  width: 100%;
+  height: auto;
+  margin: 20px 10px;
+}
+
+.game-marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.game-marquee-inner {
+  display: flex;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 20px;
+  animation: marquee-alternate 50s linear infinite alternate;
+}
+
+@keyframes marquee-alternate {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* footer */
+
+h3 {
+  color: #FF0077;
+  margin-top: 50px;
+  margin-left: 20px;
+  font-size: 2rem;
+  font-family: 'Kabel Ult BT';
+  text-align: center;
+}
+
+footer {
+  justify-content: center;
+
+}
+
+.footcenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.foot {
+  display: flex;
+  justify-content:baseline;
+  background-color: #D9D9D9;
+  width: 95%;
+  border-radius: 20px;
+}
+
+.leftFooter, .midFooter {
+  flex: 1;
+  max-width: 20%;
+}
+
+.foot p {
+  color: #fff;
+  font-size: 20px;
+  font-family: 'Dubai';
+  text-align: left;
+  margin-bottom: 2px;
+  margin-left: 50px;
+  color: black;
+}
+
