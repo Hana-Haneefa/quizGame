@@ -1,0 +1,333 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background: #0B0209;
+}
+
+.logo-container {
+  border-radius: 5px;
+  max-height: 100px;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin-top: 20px;
+}
+
+#logo {
+  max-height: 150px;
+  max-width: 200px;  
+}
+
+.mid {
+    display: flex;
+    max-height: 80vh;
+    max-width: 100%;
+    justify-content: space-between;
+    border: 2px solid #fff;
+    margin-top: 20px;
+}
+
+
+h1{
+  color: #fff;
+  margin-top: 50px;
+  margin-left: 20px;
+  font-size: 10rem;
+  font-family: 'Kabel Ult BT';
+  text-align: left;
+}
+
+p {
+  color: #fff;
+  font-size: 3rem;
+  font-family: 'Dubai';
+  text-align: right;
+}
+
+.btnStart{
+   background-color: #70B2FF;
+   font-size: 2.5rem;
+   font-family: 'Kabel Ult BT';
+   text-align: center;
+   align-items: center;
+   width: 60%;
+   height: 15%;
+   border-radius: 50px;
+   margin-top: 50px;
+   margin-left: 20px;
+   cursor: pointer;
+}
+
+.btnStart:hover{
+    background: #70B2FF;
+    color: #0B0209;
+   transition: 0.5s ease-in-out;
+}
+
+.mid-right {
+    max-width: 50%;   
+}
+
+.girl-img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    float: right;
+}
+
+/* mouse hover */
+
+.btn-text {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.btn-arrow {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect */
+.btnStart:hover .btn-text {
+  transform: translateX(-5px);
+}
+
+.btnStart:hover .btn-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* sections */
+.sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.sec1, .sec2, .sec3, .sec4, .sec5, .sec6, .sec7, .sec8 {
+  background: #70b3ffb0;
+  border: 2px solid #1e87ff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  flex: 1 1 calc(25% - 40px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sec1 p, .sec2 p, .sec3 p, .sec4 p, .sec5 p, .sec6 p, .sec7 p, .sec8 p {
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  font-family: 'Kabel Ult BT';
+}
+
+.sections div:hover {
+  background: #70B2FF;
+  transition: 0.5s ease-in-out;
+  transform: scale(1.05);
+}
+
+.appear {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.appear.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.newArrivals, .tryGames {
+  color: #fff;
+  margin-top: 50px;
+  margin-left: 20px;
+  font-size: 2.5rem;
+  font-family: 'Kabel Ult BT';
+  text-align: center;
+}
+
+.newArr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.new1 , .new2, .new3, .new4 {
+  background: #70b3ffb8;
+  border: 2px solid #1e87ff;
+  border-radius: 10px;
+  margin: 10px 20px;
+  max-width: 500px;
+  max-height: 300px;
+  flex: 1 1 calc(25% - 40px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.new1 img, .new2 img, .new3 img, .new4 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.newArr div:hover {
+  background: #70B2FF;
+  transition: 0.5s ease-in-out;
+  transform: scale(1.05);
+}
+
+.nameText {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  color: #000000;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-family: 'Dubai';
+  max-width: 100%;
+  max-height: 20%;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  text-align: center;
+  padding: 5px;
+  font-weight: bold;
+  opacity: 0;
+} 
+
+.new1:hover .nameText,
+.new2:hover .nameText,
+.new3:hover .nameText,
+.new4:hover .nameText {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Horizontal games marquee */
+.span {
+  display: inline-block;
+  width: 200px;      /* Set desired width */
+  height: auto;     /* Set desired height */
+  overflow: hidden;  /* Hide overflow */
+  vertical-align: middle;
+}
+
+.span img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image fills span */
+  margin: 0;
+  border: none;
+  display: block;
+}
+.game-marquee {
+  overflow: hidden;
+  width: 100%;
+  margin: 40px 0;
+}
+
+.game-marquee-inner {
+  display: flex;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 20px;
+  animation: marquee-alternate 50s linear infinite alternate;
+}
+
+.span a {
+  display: block;
+  width: 100%
+}
+
+@keyframes marquee-alternate {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.span img:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+}
+
+/* footer */
+
+h3 {
+  color: #1e87ff;
+  margin-top: 50px;
+  margin-left: 20px;
+  font-size: 2rem;
+  font-family: 'Kabel Ult BT';
+  text-align: center;
+}
+
+footer {
+  justify-content: center;
+
+}
+
+.footcenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.foot {
+  display: flex;
+  justify-content:baseline;
+  background-color: #70B2FF;
+  width: 95%;
+  height: 500px;
+  border-radius: 20px;
+}
+
+.leftFooter, .midFooter {
+  flex: 1;
+  max-width: 20%;
+}
+
+.foot p {
+  color: #fff;
+  font-size: 20px;
+  font-family: 'Dubai';
+  text-align: left;
+  margin-bottom: 2px;
+  margin-left: 50px;
+  color: black;
+}
+
+.rightFooter {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  margin-right: 20px;
+  background-image: url(../Images/Bbg.jpg);
+  background-size: cover;
+  background-position: center;
+}

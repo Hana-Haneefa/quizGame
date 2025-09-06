@@ -13,7 +13,7 @@ function selectGender(gender) {
 
   setTimeout(() => {
     if (gender === 'Boy') {
-      window.location.href = 'quizPage.html';
+      window.location.href = 'quizPage2.html';
     } else {
       window.location.href = 'quizPage.html';
     }
