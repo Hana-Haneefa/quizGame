@@ -11,11 +11,15 @@ function selectGender(gender) {
     prompt.style.opacity = 0;
   }, 1000);
 
+  setTimeout(() => {
+    if (gender === 'Boy') {
+      window.location.href = 'quizPage.html';
+    } else {
+      window.location.href = 'quizPage.html';
+    }
+  }, 1000);
 };
 
-setTimeout(() => {
- window.location.href = './home.html';
-}, 2000);
 
 // function selectGender(gender) {
 //   changeLogo(gender);
