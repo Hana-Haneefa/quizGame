@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Saja Boy Are You? - Kpop Demon Hunters</title>
+    <link rel="stylesheet" href="./Assets/CSS/which-saja.css">
+</head>
+<body>
+
+<div class="logo-container">
+    <img src="./Assets/Images/icons8-home-24.png" alt="" onclick="homeBack()" id="homeIcon">
+</div>
+
+<img id="winImgLeft" class="win-img left" src="" alt="Winner Left">
+<img id="winImgRight" class="win-img right" src="" alt="Winner Right">
+
+    <div class="container">
+        <div class="header">
+            <h1>Which Saja Boy Are You?</h1>
+            <p>Kpop Demon Hunters Personality Quiz</p>
+        </div>
+
+        <div class="start-screen" id="startScreen">
+            <h2>Discover Your Inner Saja Boy!</h2>
+            <p>Answer 20 questions to find out which Kpop Demon Hunter you're most like:</p>
+            <p><strong>Jinu • Romance • Baby • Abs • Mystry</strong></p>
+            <button class="start-btn" onclick="startQuiz()">Start Quiz</button>
+        </div>
+
+        <div class="quiz-content" id="quizContent" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="question-counter" id="questionCounter"></div>
+<!-- voice -->
+              <div class="question active" id="currentQuestion">
+                <h3 id="questionText"></h3>
+                <div class="question-voice">
+                    <button class="voice-btn" onclick="speakCurrentQuestion()">🔊 Listen to Question</button>
+                </div>
+                <div class="answers" id="answersContainer"></div>
+            </div>
+
+            <div class="question active" id="question1">
+                <h3>What's your ideal way to spend a weekend?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(1, 'jinu')">Training and perfecting my skills</button>
+                    <button class="answer-btn" onclick="selectAnswer(1, 'romance')">Going on a romantic date or writing poetry</button>
+                    <button class="answer-btn" onclick="selectAnswer(1, 'baby')">Having fun with friends and trying new things</button>
+                    <button class="answer-btn" onclick="selectAnswer(1, 'abs')">Working out and staying physically active</button>
+                    <button class="answer-btn" onclick="selectAnswer(1, 'mystry')">Reading ancient texts and solving mysteries</button>
+                </div>
+            </div>
+
+            <div class="question" id="question2">
+                <h3>What's your biggest strength?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(2, 'baby')">Optimism and bringing joy to others</button>
+                    <button class="answer-btn" onclick="selectAnswer(2, 'abs')">Physical strength and reliability</button>
+                    <button class="answer-btn" onclick="selectAnswer(2, 'mystry')">Intelligence and analytical thinking</button>
+                    <button class="answer-btn" onclick="selectAnswer(2, 'jinu')">Leadership and determination</button>
+                    <button class="answer-btn" onclick="selectAnswer(2, 'romance')">Empathy and emotional intelligence</button>
+                   
+                </div>
+            </div>
+
+            <div class="question" id="question3">
+                <h3>How do you handle conflict?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(3, 'jinu')">Face it head-on with courage</button>
+                    <button class="answer-btn" onclick="selectAnswer(3, 'mystry')">Analyze the situation carefully before acting</button>
+                    <button class="answer-btn" onclick="selectAnswer(3, 'romance')">Try to understand all perspectives</button>
+                    <button class="answer-btn" onclick="selectAnswer(3, 'baby')">Use humor to lighten the mood</button>
+                    <button class="answer-btn" onclick="selectAnswer(3, 'abs')">Stand firm and protect others</button>
+                </div>
+            </div>
+
+            <div class="question" id="question4">
+                <h3>What's your favorite type of music?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(4, 'mystry')">Classical or mysterious instrumental</button>
+                    <button class="answer-btn" onclick="selectAnswer(4, 'romance')">Soft ballads and love songs</button>
+                    <button class="answer-btn" onclick="selectAnswer(4, 'baby')">Upbeat pop and dance music</button>
+                    <button class="answer-btn" onclick="selectAnswer(4, 'jinu')">Powerful hip-hop or rock</button>
+                    <button class="answer-btn" onclick="selectAnswer(4, 'abs')">Motivational workout beats</button>
+                </div>
+            </div>
+
+            <div class="question" id="question5">
+                <h3>What would be your role in the group?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(5, 'romance')">The heart who keeps everyone connected</button>
+                    <button class="answer-btn" onclick="selectAnswer(5, 'baby')">The mood maker who keeps spirits high</button>
+                    <button class="answer-btn" onclick="selectAnswer(5, 'jinu')">The leader who makes tough decisions</button>
+                    <button class="answer-btn" onclick="selectAnswer(5, 'abs')">The protector who ensures everyone's safety</button>
+                    <button class="answer-btn" onclick="selectAnswer(5, 'mystry')">The strategist who plans ahead</button>
+                </div>
+            </div>
+
+            <div class="question" id="question6">
+                <h3>What's your biggest fear?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(6, 'baby')">Losing my sense of fun and wonder</button>
+                    <button class="answer-btn" onclick="selectAnswer(6, 'jinu')">Failing to protect those I care about</button>
+                    <button class="answer-btn" onclick="selectAnswer(6, 'romance')">Being alone or unloved</button>
+                    <button class="answer-btn" onclick="selectAnswer(6, 'abs')">Not being strong enough when needed</button>
+                    <button class="answer-btn" onclick="selectAnswer(6, 'mystry')">The unknown and unexplainable</button>
+                </div>
+            </div>
+
+            <div class="question" id="question7">
+                <h3>How do you recharge your energy?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(7, 'baby')">Playing games and having adventures</button>
+                    <button class="answer-btn" onclick="selectAnswer(7, 'abs')">Physical exercise and sports</button>
+                    <button class="answer-btn" onclick="selectAnswer(7, 'romance')">Spending quality time with loved ones</button>
+                    <button class="answer-btn" onclick="selectAnswer(7, 'jinu')">Meditation and focused training</button>
+                    <button class="answer-btn" onclick="selectAnswer(7, 'mystry')">Quiet contemplation and studying</button>
+                </div>
+            </div>
+
+            <div class="question" id="question8">
+                <h3>What's your approach to fashion?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(8, 'baby')">Colorful, fun, and trendy</button>
+                    <button class="answer-btn" onclick="selectAnswer(8, 'abs')">Sporty, practical, and comfortable</button>
+                    <button class="answer-btn" onclick="selectAnswer(8, 'mystry')">Dark, mysterious, and sophisticated</button>
+                    <button class="answer-btn" onclick="selectAnswer(8, 'jinu')">Sharp, professional, and commanding</button>
+                    <button class="answer-btn" onclick="selectAnswer(8, 'romance')">Elegant, soft, and romantic</button>
+                </div>
+            </div>
+
+            <div class="question" id="question9">
+                <h3>What motivates you most?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(9, 'jinu')">The desire to excel and lead</button>
+                    <button class="answer-btn" onclick="selectAnswer(9, 'baby')">Joy and making others smile</button>
+                    <button class="answer-btn" onclick="selectAnswer(9, 'abs')">Protecting and supporting others</button>
+                    <button class="answer-btn" onclick="selectAnswer(9, 'romance')">Love and meaningful connections</button>
+                    <button class="answer-btn" onclick="selectAnswer(9, 'mystry')">Uncovering truth and gaining knowledge</button>
+                </div>
+            </div>
+
+            <div class="question" id="question10">
+                <h3>How do you want to be remembered?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(10, 'jinu')">As a strong leader who inspired others</button>
+                    <button class="answer-btn" onclick="selectAnswer(10, 'romance')">As someone who loved deeply and genuinely</button>
+                    <button class="answer-btn" onclick="selectAnswer(10, 'mystry')">As a wise seeker of hidden truths</button>
+                    <button class="answer-btn" onclick="selectAnswer(10, 'baby')">As the person who brought happiness to others</button>
+                    <button class="answer-btn" onclick="selectAnswer(10, 'abs')">As a reliable protector and friend</button>
+                </div>
+            </div>
+
+             <div class="question" id="question11">
+                <h3>What’s your vibe when entering a room?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(11, 'jinu')">I assess everything before I speak.</button>
+                    <button class="answer-btn" onclick="selectAnswer(11, 'romance')">I glide in like I’m floating on silk.</button>
+                    <button class="answer-btn" onclick="selectAnswer(11, 'mystry')">I don’t speak. I just stare.</button>
+                    <button class="answer-btn" onclick="selectAnswer(11, 'baby')">I trip, laugh, and make it part of the show.</button>
+                    <button class="answer-btn" onclick="selectAnswer(11, 'abs')">I flash a smirk and flex a little.</button>
+                </div>
+            </div>
+
+            <div class="question" id="question12">
+                <h3>What’s your weapon of choice in a supernatural battle?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(12, 'jinu')">A blade forged from broken promises</button>
+                    <button class="answer-btn" onclick="selectAnswer(12, 'romance')">A rose that explodes on impact</button>
+                    <button class="answer-btn" onclick="selectAnswer(12, 'mystry')">A mirror that reflects your enemy’s fears</button>
+                    <button class="answer-btn" onclick="selectAnswer(12, 'baby')">A mic that turns into a whip</button>
+                    <button class="answer-btn" onclick="selectAnswer(12, 'abs')">Your fists, reinforced with demon fire</button>
+                </div>
+            </div>
+
+            <div class="question" id="question13">
+                <h3>What’s your biggest weakness?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(13, 'jinu')">You care too much but hide it</button>
+                    <button class="answer-btn" onclick="selectAnswer(13, 'romance')">You fall in love too easily</button>
+                    <button class="answer-btn" onclick="selectAnswer(13, 'mystry')">You don’t know who you really are</button>
+                    <button class="answer-btn" onclick="selectAnswer(13, 'baby')">You’re unpredictable even to yourself</button>
+                    <button class="answer-btn" onclick="selectAnswer(13, 'abs')">You act before thinking</button>
+                </div>
+            </div>
+
+            <div class="question" id="question14">
+                <h3>What’s your ideal stage persona?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(14, 'jinu')">Cold and commanding</button>
+                    <button class="answer-btn" onclick="selectAnswer(14, 'romance')">Dreamy and romantic</button>
+                    <button class="answer-btn" onclick="selectAnswer(14, 'mystry')">Mysterious and masked</button>
+                    <button class="answer-btn" onclick="selectAnswer(14, 'baby')">Wild and unpredictable</button>
+                    <button class="answer-btn" onclick="selectAnswer(14, 'abs')">Shirtless and powerful</button>
+                </div>
+            </div>
+
+            <div class="question" id="question15">
+                <h3>What’s your love language?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(15, 'jinu')">Acts of service, but you pretend not to care</button>
+                    <button class="answer-btn" onclick="selectAnswer(15, 'romance')">Words and eye contact</button>
+                    <button class="answer-btn" onclick="selectAnswer(15, 'mystry')">Silence and presence</button>
+                    <button class="answer-btn" onclick="selectAnswer(15, 'baby')">Teasing and chaos</button>
+                    <button class="answer-btn" onclick="selectAnswer(15, 'abs')">Physical touch and protection</button>
+                </div>
+            </div>
+
+            <div class="question" id="question16">
+                <h3>What’s your backstory in <i>your story</i>?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(16, 'jinu')">You made a deal to escape poverty</button>
+                    <button class="answer-btn" onclick="selectAnswer(16, 'romance')">You were cursed to love but never be loved</button>
+                    <button class="answer-btn" onclick="selectAnswer(16, 'mystry')">You don’t remember your origin—and maybe that’s the point</button>
+                    <button class="answer-btn" onclick="selectAnswer(16, 'baby')">You were born in mischief and never grew out of it</button>
+                    <button class="answer-btn" onclick="selectAnswer(16, 'abs')">You were built to protect, but now you destroy</button>
+                </div>
+            </div>
+
+            <div class="question" id="question17">
+                <h3>What’s your aesthetic?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(17, 'jinu')">Black silk and silver chains</button>
+                    <button class="answer-btn" onclick="selectAnswer(17, 'romance')">Pastel suits and heart-shaped accessories</button>
+                    <button class="answer-btn" onclick="selectAnswer(17, 'mystry')">Long hair, veils, and shadows</button>
+                    <button class="answer-btn" onclick="selectAnswer(17, 'baby')">Neon chaos and mismatched sneakers</button>
+                    <button class="answer-btn" onclick="selectAnswer(17, 'abs')">Leather and glowing tattoos</button>
+                </div>
+            </div>
+
+            <div class="question" id="question18">
+                <h3>What's your favourite nick name if you were a Saja boy?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(18, 'jinu')">Boss</button>
+                    <button class="answer-btn" onclick="selectAnswer(18, 'romance')">Prince</button>
+                    <button class="answer-btn" onclick="selectAnswer(18, 'mystry')">Ghost</button>
+                    <button class="answer-btn" onclick="selectAnswer(18, 'baby')">Gogogaga</button>
+                    <button class="answer-btn" onclick="selectAnswer(18, 'abs')">Gym</button>
+                </div>
+            </div>
+
+            <div class="question" id="question19">
+                <h3>What’s your catchphrase?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(19, 'jinu')">“I never forget.”</button>
+                    <button class="answer-btn" onclick="selectAnswer(19, 'romance')">“Love is a weapon.”</button>
+                    <button class="answer-btn" onclick="selectAnswer(19, 'mystry')">“You’ll never know.”</button>
+                    <button class="answer-btn" onclick="selectAnswer(19, 'baby')">“Oops, did I do that?”</button>
+                    <button class="answer-btn" onclick="selectAnswer(19, 'abs')">“Try me.”</button>
+                </div>
+            </div>
+
+            <div class="question" id="question20">
+                <h3>What’s your demon power?</h3>
+                <div class="answers">
+                    <button class="answer-btn" onclick="selectAnswer(20, 'jinu')">Memory manipulation</button>
+                    <button class="answer-btn" onclick="selectAnswer(20, 'romance')">Emotional seduction</button>
+                    <button class="answer-btn" onclick="selectAnswer(20, 'mystry')">Illusion and invisibility</button>
+                    <button class="answer-btn" onclick="selectAnswer(20, 'baby')">Chaos magic</button>
+                    <button class="answer-btn" onclick="selectAnswer(20, 'abs')">Super strength</button>
+                </div>
+            </div>
+
+
+
+        </div>
+
+       <div class="result" id="result">
+            <audio src="./Assets/Images/saja_boys_intro.mp3" id="winIntro"></audio>
+            <div class="result-character" id="resultEmoji"></div>
+            <h2 id="resultName"></h2>
+            <div class="result-description" id="resultDescription"></div>
+            <button id="speakResultBtn" class="voice-btn" onclick="speakResult()" style="display:none;">🔊 Speak Result</button>
+            <button id="stopSpeakBtn" class="voice-btn" onclick="stopSpeaking()" style="display:none;">⏹️ Stop</button>
+            <button class="restart-btn" onclick="restartQuiz()">Take Quiz Again</button>
+        </div>
+    </div>
+
+    <script>
+
+
+    function homeBack() {
+        window.history.back();
+    }
+
+        let currentQuestion = 1;
+        let scores = {
+            jinu: 0,
+            romance: 0,
+            baby: 0,
+            abs: 0,
+            mystry: 0
+        };
+
+    
+        const characterImages = {
+    jinu: {
+        left: "./Assets/Images/jinuLeft.jpeg",
+        right: "./Assets/Images/jinuRight.jpeg"
+    },
+    romance: {
+        left: "./Assets/Images/romanceLeft.jpeg",
+        right: "./Assets/Images/romanceRight.jpeg"
+    },
+    baby: {
+        left: "./Assets/Images/babyLeft.jpeg",
+        right: "./Assets/Images/babyRight.jpeg"
+    },
+    abs: {
+        left: "./Assets/Images/absLeft.jpeg",
+        right: "./Assets/Images/absRight.jpeg"
+    },
+    mystry: {
+        left: "./Assets/Images/mystryLeft.jpeg",
+        right: "./Assets/Images/mystryRight.jpeg"
+    }
+};
+    
+
+        const characters = {
+            jinu: {
+                name: "Jinu",
+                emoji: "⚔️",
+                description: "You are Jinu, the natural-born leader of the Saja Boys! With your unwavering determination and strong sense of justice, you're always ready to face any challenge head-on. Your courage and leadership skills inspire others to follow you into battle against the forces of darkness. You have a commanding presence and never back down from what's right."
+            },
+            romance: {
+                name: "Romance",
+                emoji: "💖",
+                description: "You are Romance, the heart and soul of the group! Your empathetic nature and emotional intelligence make you the one everyone turns to for comfort and understanding. You see beauty in everything and believe that love can conquer even the darkest demons. Your gentle spirit and caring nature bring warmth and healing to those around you."
+            },
+            baby: {
+                name: "Baby",
+                emoji: "🌟",
+                description: "You are Baby, the sunshine of the Saja Boys! Your infectious optimism and playful spirit can brighten anyone's day. Despite facing demons and darkness, you never lose your sense of wonder and joy. You're the mood maker who keeps everyone's spirits high during tough times, reminding them that there's always something to smile about."
+            },
+            abs: {
+                name: "Abs",
+                emoji: "💪",
+                description: "You are Abs, the physical powerhouse and protector of the group! Your incredible strength and unwavering loyalty make you the shield that guards your friends. You're practical, reliable, and always ready to put yourself on the line for others. Your dedication to fitness and protection makes you an unstoppable force against evil."
+            },
+            mystry: {
+                name: "Mystry",
+                emoji: "🔮",
+                description: "You are Mystry, the enigmatic strategist of the Saja Boys! Your sharp intellect and mysterious aura make you the master of uncovering hidden truths. You see patterns and connections that others miss, making you invaluable in the fight against supernatural forces. Your analytical mind and thirst for knowledge help solve the most complex demon-hunting mysteries."
+            }
+        };
+
+        function startQuiz() {
+            document.getElementById('startScreen').style.display = 'none';
+            document.getElementById('quizContent').style.display = 'block';
+            updateProgress();
+            updateQuestionCounter();
+
+        }
+
+        function selectAnswer(questionNum, character) {
+            scores[character]++;
+            nextQuestion();
+        }
+
+        function nextQuestion() {
+            document.getElementById(`question${currentQuestion}`).classList.remove('active');
+            currentQuestion++;
+            
+            if (currentQuestion <= 20) {
+                setTimeout(() => {
+                    document.getElementById(`question${currentQuestion}`).classList.add('active');
+                    updateProgress();
+                    updateQuestionCounter();
+                }, 300);
+            } else {
+                showResult();
+            }
+        }
+
+        function updateProgress() {
+            const progress = (currentQuestion / 20) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        function updateQuestionCounter() {
+            document.getElementById('questionCounter').textContent = `Question ${currentQuestion} of 20`;
+        }
+
+       // ...existing code...
+function showResult() {
+    document.getElementById('winIntro').play();
+    document.getElementById('quizContent').style.display = 'none';
+
+
+    // Find the character with the highest score
+    let maxScore = 0;
+    let resultCharacter = 'jinu';
+
+    for (let character in scores) {
+        if (scores[character] > maxScore) {
+            maxScore = scores[character];
+            resultCharacter = character;
+        }
+    }
+
+    // Display result
+    document.getElementById('resultEmoji').textContent = characters[resultCharacter].emoji;
+    document.getElementById('resultName').textContent = characters[resultCharacter].name;
+    document.getElementById('resultDescription').textContent = characters[resultCharacter].description;
+    document.getElementById('result').classList.add('show');
+
+    // Set win images
+    document.getElementById('winImgLeft').src = characterImages[resultCharacter].left;
+    document.getElementById('winImgRight').src = characterImages[resultCharacter].right;
+    document.getElementById('winImgLeft').classList.add('showImg');
+    document.getElementById('winImgRight').classList.add('showImg');
+
+    // Show speak button
+    document.getElementById('speakResultBtn').style.display = 'inline-flex';
+    document.getElementById('stopSpeakBtn').style.display = 'none';
+
+    // Automatically speak result
+    speakResult();
+}
+// ...existing code...
+
+        function restartQuiz() {
+            // Reset variables
+            currentQuestion = 1;
+            scores = {
+                jinu: 0,
+                romance: 0,
+                baby: 0,
+                abs: 0,
+                mystry: 0
+            };
+
+            // Reset UI
+            document.getElementById('result').classList.remove('show');
+            document.getElementById('startScreen').style.display = 'block';
+
+            document.getElementById('winImgLeft').classList.remove('showImg');
+            document.getElementById('winImgRight').classList.remove('showImg');
+            document.getElementById('winImgLeft').src = '';
+            document.getElementById('winImgRight').src = '';
+         
+            
+            // Reset questions
+            for (let i = 1; i <= 20; i++) {
+                document.getElementById(`question${i}`).classList.remove('active');
+            }
+            document.getElementById('question1').classList.add('active');
+            
+            // Reset progress
+            document.getElementById('progressFill').style.width = '0%';
+
+         
+        }
+
+        // Text-to-Speech Functions
+        function speakText(text) {
+            // Stop any current speech
+            if (currentUtterance) {
+                speechSynthesis.cancel();
+            }
+
+            currentUtterance = new SpeechSynthesisUtterance(text);
+            currentUtterance.rate = 0.8;
+            currentUtterance.pitch = 1;
+            currentUtterance.volume = 0.8;
+
+            // Try to use a pleasant voice
+            const voices = speechSynthesis.getVoices();
+            const preferredVoice = voices.find(voice => 
+                voice.lang.includes('en') && 
+                (voice.name.includes('Female') || voice.name.includes('Samantha') || voice.name.includes('Karen'))
+            ) || voices.find(voice => voice.lang.includes('en'));
+            
+            if (preferredVoice) {
+                currentUtterance.voice = preferredVoice;
+            }
+
+            speechSynthesis.speak(currentUtterance);
+        }
+
+        function speakResult() {
+            const resultCharacter = getCurrentResult();
+            const character = characters[resultCharacter];
+            const fullText = `You are ${character.name}! ${character.description}`;
+            
+            document.getElementById('speakResultBtn').style.display = 'none';
+            document.getElementById('stopSpeakBtn').style.display = 'inline-flex';
+            
+            speakText(fullText);
+            
+            // Show speak button again when done
+            if (currentUtterance) {
+                currentUtterance.onend = function() {
+                    document.getElementById('speakResultBtn').style.display = 'inline-flex';
+                    document.getElementById('stopSpeakBtn').style.display = 'none';
+                };
+            }
+        }
+
+        function stopSpeaking() {
+            if (currentUtterance) {
+                speechSynthesis.cancel();
+                document.getElementById('speakResultBtn').style.display = 'inline-flex';
+                document.getElementById('stopSpeakBtn').style.display = 'none';
+            }
+        }
+
+        function getCurrentResult() {
+            let maxScore = 0;
+            let resultCharacter = 'jinu';
+            
+            for (let character in scores) {
+                if (scores[character] > maxScore) {
+                    maxScore = scores[character];
+                    resultCharacter = character;
+                }
+            }
+            return resultCharacter;
+        }
+
+        // Load voices when available
+        speechSynthesis.onvoiceschanged = function() {
+            // Voices are now loaded
+        };
+
+         // Text-to-Speech Functions
+        let currentUtterance = null;
+
+      function speakText(text) {
+    if (currentUtterance) {
+        speechSynthesis.cancel();
+    }
+
+    currentUtterance = new SpeechSynthesisUtterance(text);
+    currentUtterance.rate = 0.95;
+    currentUtterance.pitch = 1.1;
+    currentUtterance.volume = 0.9;
+
+    // Prefer a young male English voice
+    const voices = speechSynthesis.getVoices();
+    const preferredVoice = voices.find(voice =>
+        voice.lang.includes('en') &&
+        (voice.name.includes('Male') ||
+         voice.name.includes('Google US English') ||
+         voice.name.includes('Microsoft David') ||
+         voice.name.includes('Amber'))
+    ) || voices.find(voice => voice.lang.includes('en'));
+
+    if (preferredVoice) {
+        currentUtterance.voice = preferredVoice;
+    }
+
+    speechSynthesis.speak(currentUtterance);
+}
+
+     function speakCurrentQuestion() {
+         const questionText = document.getElementById(`question${currentQuestion}`).querySelector('h3').textContent;
+         speakText(questionText);
+     }
+        function stopSpeaking() {
+            if (currentUtterance) {
+                speechSynthesis.cancel();
+                document.getElementById('speakResultBtn').style.display = 'inline-flex';
+                document.getElementById('stopSpeakBtn').style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>
