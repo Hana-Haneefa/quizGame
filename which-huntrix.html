@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Assets/CSS/which-huntrix.css">
+</head>
+<body>
+<div class="logo-container">
+    <img src="./Assets/Images/icons8-home-24.png" alt="" onclick="homeBack()" id="homeIcon">
+</div>
+
+<img id="winImgLeft" class="win-img left" src="" alt="Winner Left">
+<img id="winImgRight" class="win-img right" src="" alt="Winner Right">
+
+    <div class="container">
+        <div class="header">
+            <h1>Which Huntrix Member Are You?</h1>
+            <p>Kpop Demon Hunters Personality Quiz</p>
+        </div>
+
+        <div class="start-screen" id="startScreen">
+            <h2>Discover Your Inner Huntrix Warrior!</h2>
+            <p>Answer 20 randomized questions to find out which Huntrix member you're most like:</p>
+            <p><strong>Rumi • Mira • Zoey</strong></p>
+            <button class="start-btn" onclick="startQuiz()">Start Quiz</button>
+        </div>
+
+        <div class="quiz-content" id="quizContent" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="question-counter" id="questionCounter"></div>
+
+            <div class="question active" id="currentQuestion">
+                <h3 id="questionText"></h3>
+                <div class="question-voice">
+                    <button class="voice-btn" onclick="speakCurrentQuestion()">🔊 Listen to Question</button>
+                </div>
+                <div class="answers" id="answersContainer"></div>
+            </div>
+        </div>
+
+        <div class="result" id="result">
+            <div class="result-character" id="resultEmoji"></div>
+            <h2 id="resultName"></h2>
+            <div class="result-voice">
+                <button class="voice-btn" onclick="speakResult()" id="speakResultBtn">🔊 Listen to Result</button>
+            </div>
+            <div class="result-description" id="resultDescription"></div>
+            <button class="restart-btn" onclick="restartQuiz()">Take Quiz Again</button>
+            <button class="voice-btn" onclick="stopSpeaking()" id="stopSpeakBtn" style="display: none;">⏹️ Stop</button>
+        </div>
+    </div>
+    <script>
+                 const characterImages = {
+    rumi: {
+        left: "./Assets/Images/rumiLeft.jpeg",
+        right: "./Assets/Images/rumiRight.jpeg"
+    },
+    mira: {
+        left: "./Assets/Images/miraLeft.jpeg",
+        right: "./Assets/Images/miraRight.jpeg"
+    },
+    zoey: {
+        left: "./Assets/Images/zoeyLeft.jpeg",
+        right: "./Assets/Images/zoeyRight.jpeg"
+    }
+};
+    </script>
+    <script src="./Assets/JS/which-huntrix.js"></script>
+</body>
+</html>
