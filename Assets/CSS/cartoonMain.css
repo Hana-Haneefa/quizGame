@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #470a34;
+}
+
+h1 {
+    font-family: 'Kabel Ult BT', sans-serif;
+    font-size: 4rem;
+    background: linear-gradient(90deg, #FF92DC, #f1257d);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.description {
+    font-family: 'Dubai', sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-content: space-around;
+    margin: 50px 0;
+    padding: 0 20px;
+}
+
+.quizItem {
+    height: 220px;
+    width: 100%;
+    min-width: 400px;
+    display: flex;
+    flex: 1 1 400px;
+    border-radius: 20px;
+    border: 3px solid black;
+    background-color: #ffc5fb;
+}
+
+.quizItem:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.image {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex: 1 1 100%;
+}
+
+.text {
+    min-width: 120px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.quizItem a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; /* Optional: remove underline */
+}
+
+.text h2 {
+    font-size: 1.5em;
+    margin: 20px 10px;
+    color: #333;
+    font-family: 'Kabel Ult BT', sans-serif;
+    text-align: center;
+}
+
+.text p {
+    font-size: 20px;
+    color: #666;
+    font-family: 'Dubai', sans-serif;
+    text-align: center;
+    
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}

@@ -9,6 +9,10 @@ body{
   background: #0B0209;
 }
 
+.sections a {
+  text-decoration: none;
+}
+
 .logo-container {
   border-radius: 5px;
   max-height: 100px;
